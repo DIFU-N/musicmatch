@@ -1,8 +1,12 @@
 using Odyssey.MusicMatcher;
+using SpotifyWeb;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddGraphQLServer().AddQueryType<Query>().AddType<Playlist>();
+builder.Services.AddHttpClient<SpotifyService>();
+
+builder.Services.AddGraphQLServer().AddQueryType<Query>()
+.RegisterService<SpotifyService>();
 
 builder.Services.AddCors(options =>
 {
