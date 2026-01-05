@@ -3,11 +3,6 @@ namespace Odyssey.MusicMatcher;
 public class Query
 {
     // where Query resolver functions will go
-    public string Hello()
-    {
-        return "Hello world";
-    }
-
     [GraphQLDescription("Playlists hand-picked to be featured to all users.")]
     public List<Playlist> FeaturedPlaylists()
     {
